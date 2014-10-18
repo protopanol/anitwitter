@@ -1,0 +1,13 @@
+{
+  "name": "anitwitter",
+  "desciption": "A twitter clone for weeaboos.",
+  "author": "protopanol <protopanol@gmail.com>",
+  "repository": {
+  	"type" : "git",
+  	"url" : "https://github.com/protopanol/anitwitter.git"
+  },
+  "dependencies": {
+    "express": "4.x.x",
+    "mongoose": "3.x.x"
+  }
+}
