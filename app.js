@@ -7,8 +7,12 @@ var config = require('./config');
 
 app.use(serveStatic('public'));
 
+//set views location
+app.set('views', './views');
+app.set('view engine', 'ejs');
+
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.render('index');
 });
 
 var server = app.listen(config.port, function() {
