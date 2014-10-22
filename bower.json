@@ -2,7 +2,11 @@
   "name": "anitwitter",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "~3.*.*"
+    "bootstrap": "~3.*.*",
+    "angular": "~1.*.*",
+    "angular-animate": "~1.*.*",
+    "angular-route": "~1.*.*",
+    "angular-resource": "~1.*.*"
   },
   "private": true
 }
