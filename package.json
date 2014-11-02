@@ -7,6 +7,8 @@
     "url": "https://github.com/protopanol/anitwitter.git"
   },
   "dependencies": {
+    "cookie-session": "^1.0.2",
+    "csurf": "^1.6.2",
     "ejs": "^1.0.0",
     "express": "4.x.x",
     "mongoose": "3.x.x",
