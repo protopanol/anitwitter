@@ -7,6 +7,7 @@ var config = require('./config');
 var session = require('cookie-session');
 var csrf = require('csurf');
 var bodyParser = require('body-parser');
+var routes = require('./routes');
 
 app.use(serveStatic('public'));
 // parse application/x-www-form-urlencoded
@@ -23,17 +24,9 @@ app.use(csrf());
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-app.get('/', function (req, res) {
-  res.render('index', { csrfToken: req.csrfToken() });
-});
-
-app.post('/login', function (req, res) {
-  res.render('index', { csrfToken: req.csrfToken() });
-});
-
-app.post('/register', function (req, res) {
-  res.render('index', { csrfToken: req.csrfToken() });
-});
+app.get('/', routes.index);
+app.post('/login', routes.user.login);
+app.post('/register', routes.user.register);
 
 app.use(function (err, req, res, next) {
   if (err.code !== 'EBADCSRFTOKEN') return next(err)
