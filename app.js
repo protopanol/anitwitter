@@ -9,6 +9,14 @@ var csrf = require('csurf');
 var bodyParser = require('body-parser');
 var routes = require('./routes');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/' + config.db);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  // yay!
+});
+
 app.use(serveStatic('public'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))

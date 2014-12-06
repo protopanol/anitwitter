@@ -1,7 +1,7 @@
 exports.login = function (req, res) {
-  res.render('index', { csrfToken: req.csrfToken() });
+  res.redirect('/');
 }
 
 exports.register = function (req, res) {
-  res.render('index', { csrfToken: req.csrfToken() });
+  res.redirect('/');
 }

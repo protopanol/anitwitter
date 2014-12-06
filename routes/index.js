@@ -1,5 +1,9 @@
 exports.index = function (req, res) {
-  res.render('index', { csrfToken: req.csrfToken() });
+  if(req.user){
+
+  } else {
+    res.render('landing', { csrfToken: req.csrfToken() });
+  }
 }
 
 exports.user = require("./user.js");
